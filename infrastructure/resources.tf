@@ -32,8 +32,8 @@ resource "random_string" "random" {
   override_special = "/@£$"
 }
 
-resource "aws_key_pair" "app_ssh" {
-  key_name   = "application-ssh-${random_string.random.result}"
+resource "aws_key_pair" "deployer" {
+  key_name   = "srawiterraform"
   public_key = var.instance_ssh_public_key
   tags = {
     Name      = "application-ssh"
