@@ -47,7 +47,7 @@ resource "aws_instance" "app_vm" {
   instance_type               = "t2.micro"
   subnet_id                   = module.vpc.public_subnets[0]
   vpc_security_group_ids      = [aws_security_group.vm_sg.id]
-  key_name                    = aws_key_pair.app_ssh.key_name
+  key_name                    = aws_key_pair.deployer.key_name
   associate_public_ip_address = false
 
   tags = {
